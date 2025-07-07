@@ -1,0 +1,29 @@
+# RESTful API Endpoints
+
+## Authentication
+- POST   /api/auth/register      — Register a new user
+- POST   /api/auth/login         — Login and receive JWT
+- GET    /api/auth/me            — Get current user profile (JWT required)
+
+## User Management
+- GET    /api/users/:id          — Get user profile by ID (admin/future)
+- PATCH  /api/users/me           — Update own profile (JWT required)
+
+## Task Management
+- GET    /api/tasks              — List tasks (with filtering, search, pagination)
+- POST   /api/tasks              — Create a new task
+- GET    /api/tasks/:id          — Get a single task by ID
+- PATCH  /api/tasks/:id          — Update a task
+- DELETE /api/tasks/:id          — Delete a task
+
+## Categories
+- GET    /api/categories         — List categories (user/global)
+- POST   /api/categories         — Create a category
+- PATCH  /api/categories/:id     — Update a category
+- DELETE /api/categories/:id     — Delete a category
+
+## Priorities
+- GET    /api/priorities         — List all priorities
+
+## Task Assignments (future)
+- POST   /api/tasks/:id/assign   — Assign task to user(s)

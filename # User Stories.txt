@@ -1,0 +1,29 @@
+# User Stories
+
+## Authentication
+- As a new user, I want to register an account so I can manage my tasks securely.
+- As a registered user, I want to log in so I can access my personal tasks.
+- As a user, I want my session to be secure so that my data is protected.
+
+## Task Management (CRUD)
+- As a user, I want to create new tasks so I can keep track of things I need to do.
+- As a user, I want to view a list of all my tasks so I can see what needs to be done.
+- As a user, I want to update tasks so I can change details like title, description, priority, or due date.
+- As a user, I want to delete tasks so I can remove tasks I no longer need.
+
+## Task Details
+- As a user, I want to assign a priority (e.g., Low, Medium, High) to each task so I can focus on important items.
+- As a user, I want to set a due date for each task so I can manage deadlines.
+- As a user, I want to mark tasks as complete so I can track my progress.
+
+## Filtering & Search
+- As a user, I want to filter tasks by status (complete/incomplete), priority, or due date so I can focus on relevant tasks.
+- As a user, I want to search for tasks by keyword so I can quickly find specific tasks.
+
+## Categories (Optional)
+- As a user, I want to assign categories to tasks so I can organize them by project or context.
+
+## Security & Usability
+- As a user, I want my data to be private and accessible only to me.
+- As a user, I want the system to be fast and responsive.
+- As a user, I want to be notified of upcoming due dates (future feature).

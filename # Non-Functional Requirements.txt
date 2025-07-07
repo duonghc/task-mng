@@ -1,0 +1,30 @@
+# Non-Functional Requirements
+
+## Performance
+- The system should respond to API requests within 500ms under normal load.
+- The system should support at least 100 concurrent users.
+
+## Security
+- All passwords must be hashed using a strong algorithm (e.g., bcrypt).
+- JWT tokens must be signed with a secure secret.
+- Sensitive data must not be exposed in logs or error messages.
+- Rate limiting must be applied to authentication endpoints to prevent brute-force attacks.
+- CORS must be configured to allow only trusted origins.
+
+## Scalability
+- The system must be designed to allow horizontal scaling of the API and database.
+- The database schema should support future features (e.g., notifications, task sharing).
+
+## Usability
+- The API must follow RESTful conventions and be well-documented.
+- Error messages must be clear and actionable.
+- The frontend must be responsive and accessible.
+
+## Maintainability
+- The codebase must use TypeScript for type safety.
+- The project must follow standard coding conventions and be well-documented.
+- Automated tests must be provided for core business logic and API endpoints.
+
+## Availability & Reliability
+- The system must be deployable using Docker for consistent environments.
+- The system must handle and log errors gracefully.

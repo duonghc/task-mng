@@ -1,0 +1,37 @@
+# Functional Requirements
+
+## Authentication
+- The API must support user registration with email and password.
+- Passwords must be hashed before storage.
+- The API must support user login and return a JWT token for authenticated requests.
+- All task management endpoints must require authentication via JWT.
+
+## Task Management
+- Users can create, read, update, and delete their own tasks.
+- Each task must have: title, description, priority, due date, status (complete/incomplete), and category.
+- Tasks must be associated with the user who created them.
+- Users can mark tasks as complete or incomplete.
+
+## Priority & Due Dates
+- Tasks must support priority levels (e.g., Low, Medium, High).
+- Tasks must have an optional due date field.
+
+## Filtering & Search
+- The API must support filtering tasks by status, priority, due date, and category.
+- The API must support searching tasks by title or description keywords.
+
+## Data Validation
+- All input data must be validated (e.g., required fields, valid email, password strength, valid dates).
+- Invalid requests must return appropriate error messages.
+
+## User Management
+- Users can update their profile information (e.g., name, email, password).
+- Users can view their own profile.
+
+## Security
+- All sensitive endpoints must require authentication.
+- Passwords must never be returned in API responses.
+- JWT tokens must be validated on each request.
+
+## Error Handling
+- The API must return appropriate HTTP status codes and error messages for all error cases.
