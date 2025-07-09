@@ -43,4 +43,10 @@ export class UserService {
     if (newPassword.length < 8) throw new Error('Password too short');
     return await userRepository.update(id, { password: newPassword });
   }
+
+  async listUsers() {
+    // Trả về danh sách user chỉ gồm id, name, email
+    const result = await userRepository.listUsers();
+    return result;
+  }
 }

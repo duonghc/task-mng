@@ -1,8 +1,6 @@
-import { Pool } from 'pg';
+import { pool } from '../config/db';
 import bcrypt from 'bcryptjs';
 import { User } from '../models/User';
-
-const pool = new Pool();
 
 export const userRepository = {
   async create(user: Omit<User, 'id' | 'created_at' | 'updated_at'> & { password: string }): Promise<User> {
@@ -15,11 +13,15 @@ export const userRepository = {
   },
   async findByEmail(email: string): Promise<User | null> {
     const result = await pool.query(`SELECT * FROM users WHERE email = $1`, [email]);
-    return result.rows[0] || null;
+    if (!result.rows[0]) return null;
+    const user = result.rows[0];
+    return { ...user, password: user.password_hash };
   },
   async findById(id: number): Promise<User | null> {
     const result = await pool.query(`SELECT * FROM users WHERE id = $1`, [id]);
-    return result.rows[0] || null;
+    if (!result.rows[0]) return null;
+    const user = result.rows[0];
+    return { ...user, password: user.password_hash };
   },
   async update(id: number, data: Partial<User>): Promise<User | null> {
     // Only allow updating name, email, password
@@ -42,5 +44,9 @@ export const userRepository = {
   },
   async delete(id: number): Promise<void> {
     await pool.query(`DELETE FROM users WHERE id = $1`, [id]);
+  },
+  async listUsers(): Promise<{ id: number; name: string; email: string }[]> {
+    const result = await pool.query('SELECT id, name, email FROM users ORDER BY id ASC');
+    return result.rows;
   }
 };

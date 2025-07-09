@@ -28,3 +28,12 @@ export const updateProfile = (req: AuthRequest, res: Response, next: NextFunctio
     .then(updated => { res.json(updated); return undefined; })
     .catch(next);
 };
+
+export const listUsers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  try {
+    const users = await userService.listUsers();
+    res.json(users);
+  } catch (err) {
+    next(err);
+  }
+};
